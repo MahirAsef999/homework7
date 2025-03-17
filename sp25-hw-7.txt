@@ -1,0 +1,67 @@
+﻿CISC 3300 S25 
+Homework 7 
+
+1. What is a class? What is an object? What is OOP? 
+A class is like a blueprint that defines how something should be structured and what it can do, similar to a car blueprint that outlines its parts and functions. An object is a real-world instance created from that blueprint, like an actual car built from the design, with specific details like color and model. Object-Oriented Programming (OOP) is a way of writing code that organizes programs into classes and objects, making them easier to manage, reuse, and scale. OOP follows four key principles: Encapsulation (hiding details inside objects to control access), Inheritance (allowing one class to inherit properties from another, like a child inheriting traits from a parent), Polymorphism (letting different objects use the same function but behave differently, like a phone and laptop both having a "charge" function but working uniquely), and Abstraction (hiding complex details and only showing what is necessary). This approach helps make programming more efficient, organized, and reusable.
+
+
+
+
+2. Why use an abstract class in OOP? 
+
+
+An abstract class in OOP is like a template for other classes. It provides a common structure that related classes must follow, but it cannot be used directly to create objects. Instead, other classes inherit from it and must fill in the missing details. An abstract class can have abstract methods (methods with no code) that must be defined in the child classes. This ensures that all child classes follow a consistent structure while allowing them to have their own unique implementations. Abstract classes are useful when you want to enforce a common design across multiple related classes while still allowing flexibility in how specific details are handled.
+
+
+
+
+3. What are superglobals in PHP, what are some examples of data they provide? 
+
+
+Superglobals in PHP are special built-in variables that allow you to access important server and user data from anywhere in your script. These variables are always available and do not need to be declared. Some common superglobals include $_GET, which retrieves data sent through a URL (like search queries), and $_POST, which gets data from an HTML form submission. $_SESSION stores user session data, while $_COOKIE manages small pieces of data saved on a user’s browser. Other examples include $_SERVER, which provides details about the server and request, $_FILES, which handles file uploads, $_REQUEST, which combines both GET and POST data, and $_ENV, which stores environment variables. Superglobals are essential for handling user input, managing user sessions, and interacting with the server efficiently.
+
+
+
+
+4. What are the two steps to setting up and using a class via namespaces? 
+
+
+The first step is to define the namespace at the top of the class file using the namespace keyword, followed by the namespace name. For example, writing namespace MyApp\Models; inside a User.php file places the User class inside the Models folder under MyApp. This helps group related classes together. The second step is to import and use the class in another file. You do this with the use keyword, which allows you to reference the class without needing to type the full namespace every time. For example, writing use MyApp\Models\User; lets you create a User object just by calling new User();. Namespaces are especially useful in large projects where multiple files might contain classes with the same name, making the code more structured and easier to manage.
+
+
+
+
+5. What is MVC? Detail the different parts. 
+
+
+MVC (Model-View-Controller) is a design pattern that helps organize code by dividing an application into three key parts. The Model handles all data and business logic, such as storing, updating, and retrieving information, often from a database. The View is responsible for displaying data to the user using HTML, templates, or frontend frameworks, but it does not process any logic. The Controller acts as a middleman, handling user input, processing requests, and communicating with the Model to fetch or update data before passing it to the View for display. This separation makes applications easier to manage, scale, and debug, as each part has a distinct role. By keeping data, presentation, and logic separate, MVC improves organization, simplifies maintenance, and allows teams to work efficiently without interfering with each other's code. 
+
+
+
+
+6. If I had a resource called users in my application that was designed with RESTFUL URI design, what would the URI and HTTP verbs be for: 
+a. getting all users 
+b. getting one users 
+c. saving a user 
+d. editing a user 
+e. deleting a user 
+
+
+In a RESTful API, resources like users are accessed using specific HTTP verbs and URIs for consistency. Here’s how it would be structured:
+
+a. Getting all users → The HTTP verb is GET, and the URI is /users, which retrieves a list of all users.
+b. Getting one user → The HTTP verb is GET, and the URI is /users/{id}, where {id} represents the unique user ID. This fetches details for a specific user.
+c. Saving a user → The HTTP verb is POST, and the URI is /users. This endpoint is used to create and store a new user in the system.
+d. Editing a user → The HTTP verb is PUT, and the URI is /users/{id}, where {id} specifies the user to update. This modifies the existing user’s details.
+e. Deleting a user → The HTTP verb is DELETE, and the URI is /users/{id}, which removes a specific user from the system.
+Following this structure makes the API clear, scalable, and easy to use while following RESTful best practices.
+
+
+
+
+
+
+
+
+7. Create a PHP project in an MVC style. It should have the ability to submit a new note resource, a note should have a title and a description. The title of the note should be more than 3 characters long and the description should be more than 10 characters long. Any special characters should be converted to HTML entities. On the frontend show a success message if the request is successful and an error message if anything is wrong. Add some basic styling. 
+a. no need for a model class, the validation can happen in a controller method.
