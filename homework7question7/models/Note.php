@@ -15,7 +15,7 @@ class Note {
         if (strlen($this->description) < 11) {
             return "Description must be at least 11 characters long.";
         }
-        return null; // No errors
+        return null; 
     }
 
     public function sanitize() {
