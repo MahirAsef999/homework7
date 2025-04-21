@@ -1,0 +1,12 @@
+{
+    "name": "yourname/workout-log",
+    "autoload": {
+      "psr-4": {
+        "app\\": "app/"
+      }
+    },
+    "require": {
+      "orhanerday/open-ai": "^5.1"
+    }
+  }
+  

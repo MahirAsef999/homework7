@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Workout Log</title>
+    <link rel="stylesheet" href="/assets/styles/homepage.css" />
+    <script src="/assets/js/homepage.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Your Workout Log</h1>
+        <p>Track and review your past workouts</p>
+        <div class="header-buttons">
+            <a href="/"><button class="home">🏠 Home</button></a>
+            <a href="/workouts"><button>Add New Workout</button></a>
+            <a href="/logout"><button class="logout">Logout</button></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Workout Form -->
+        <section class="form-section">
+            <h2>Add a New Workout</h2>
+            <form id="workoutForm">
+                <input type="hidden" id="logId" name="id">
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="exercise">Exercise Type</label>
+                    <input type="text" id="exercise" name="exercise" placeholder="e.g., Bench Press, Running" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Weight (lbs or 'Bodyweight')</label>
+                    <input type="text" id="weight" name="weight" placeholder="e.g., 135 or Bodyweight" required>
+                </div>
+
+                <div class="form-group-inline">
+                    <div>
+                        <label for="sets">Sets</label>
+                        <input type="text" id="sets" name="sets" placeholder="e.g., 3 or N/A" required>
+                    </div>
+                    <div>
+                        <label for="reps">Reps per Set</label>
+                        <input type="text" id="reps" name="reps" placeholder="e.g., 10 or N/A" required>
+                    </div>
+                </div>
+
+                <div class="form-group-inline">
+                    <div>
+                        <label for="time">Time (minutes)</label>
+                        <input type="text" id="time" name="time" placeholder="e.g., 30">
+                    </div>
+                    <div>
+                        <label for="distance">Distance (miles/km)</label>
+                        <input type="text" id="distance" name="distance" placeholder="e.g., 2.5">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="calories">Calories Burned</label>
+                    <input type="text" id="calories" name="calories" placeholder="e.g., 250">
+                </div>
+
+                <button type="submit" class="primary-btn">Log Workout</button>
+            </form>
+        </section>
+
+        <!-- Advice Section -->
+        <section class="form-section">
+            <h2>Need Advice?</h2>
+            <form id="adviceForm">
+                <div class="form-group">
+                    <label for="adviceQuestion">Ask ChatGPT a workout question:</label>
+                    <input type="text" id="adviceQuestion" name="question" placeholder="e.g., What's a good leg workout?" required>
+                </div>
+                <button type="submit">Ask</button>
+            </form>
+            <div id="adviceBox" class="log-entry" style="margin-top: 20px;"></div>
+        </section>
+
+        <!-- Logs Section -->
+        <section class="logs-section">
+            <h2>Previous Logs</h2>
+            <div id="logsContainer">
+                <!-- Logs will be loaded here dynamically -->
+            </div>
+        </section>
+
+        <!-- Search by Exercise Section (Below Logs) -->
+        <section class="form-section">
+            <h2>Search by Exercise</h2>
+            <form id="searchForm">
+                <input type="text" id="searchExercise" name="exercise" placeholder="e.g., Bench Press" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="searchResults" class="logs-section" style="margin-top: 20px;">
+                <!-- Search results will be rendered here -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Workout Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>
